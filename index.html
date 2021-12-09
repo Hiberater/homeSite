@@ -43,17 +43,23 @@
         <div class="col-sm-8 blog-main">
 
           <div class="blog-post">
-            <h2 class="blog-post-title">SQLSever カーソル<br>についての備忘録</h2>
+            <h2 class="blog-post-title">SQLSever カーソルについての備忘録</h2>
             <p class="blog-post-meta">2021/12/09</p>
 
             <p></p>
             <hr>
-            <p>私が参画しているプロジェクトでとあるテーブルのパッチを当ててほしいと頼まれました。そのテーブルの件数がなんと約3000万件</p>
+            <p>私が参画しているプロジェクトでとあるテーブルのパッチを当ててほしいと頼まれました。そのテーブルの件数がなんと
+            <strong>約3000万件！！</strong>
+            <br>(この業界入って間もないので暖かいで目見ていただけると幸いです。)<br>
+            とても手作業でパッチを当てられないので、ストアドプロシージャを作成し、処理内でパッチをあてるようにしました。<br>
+            </p>
             <blockquote>
-              <p>Curabitur blandit tempus porttitor. <strong>Nullam quis risus eget urna mollis</strong> ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <p><strong>しかしなぜか遅い</strong></p>
             </blockquote>
-            <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
-            <h2>Heading</h2>
+            <p>原因はカーソル宣言時にオプションを指定していない指定していないためでした。<br>
+            以下に備忘録として残します。
+            </p>
+            <h2>カーソルのオプション</h2>
             <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
             <h3>Sub-heading</h3>
             <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
